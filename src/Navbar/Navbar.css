@@ -1,0 +1,60 @@
+.nav{
+    display: flex;
+    justify-content: flex-start;
+    height: fit-content;
+    color: black;
+}
+
+.logo{
+    display: flex;
+    padding-top: 0.4rem;
+    padding-left: 1.5rem;
+    padding-bottom: 0.4rem;
+    height: auto;
+    width: 6cm;
+}
+
+.pages{
+    display: grid;
+   grid-template-columns: auto auto auto auto auto;
+   gap: 3rem;
+   padding-top:1.2rem ;
+   padding-left: 17rem;
+   font-size: large;
+   font-family: 'Poppins';
+   color: black;
+
+}
+
+.pp{
+    text-decoration: none;
+    color: black;
+}
+
+.sign{
+    padding-left: 7rem;
+    display: flex;
+    color: black;
+}
+.SignUp{
+    text-decoration: none;
+    color: black;
+}
+.SignIn{
+    padding-left: 2rem;  
+    position: relative;
+    top: -0.4rem;
+
+}
+
+.Sign{
+    font-size: large;
+    text-align: center;
+    font-family: 'Poppins';  
+    height: +2.5rem;
+    width: 5.5rem;
+    border-style: solid;
+      background: linear-gradient(#fff, #fff) padding-box,
+      linear-gradient(45deg, slateblue, coral) border-box;
+border: 5px solid transparent;
+border-radius: 50px;}
