@@ -6,7 +6,7 @@ import "@fontsource/poppins";
 const Navbar = () => {
   return (
     <div className='nav'>
-        <Link to="/">
+        <Link className='pp' to="/">
             <img className='logo' src={logo}/>
         </Link>
         <div className='pages'>
