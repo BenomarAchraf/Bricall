@@ -65,3 +65,41 @@ font-size: 20px;
 line-height: 28px;
 color: #A1A1AA;
 }
+
+.Catalogue{
+
+    z-index: 1;
+    position: relative;
+    top: -3.8rem;
+    height: 2157px;
+    background: linear-gradient(0deg, rgba(15, 18, 51, 0.64), rgba(15, 18, 51, 0.64)), linear-gradient(89.99deg, rgba(184, 143, 209, 0.77) 0.01%, rgba(255, 255, 255, 0.77) 0.01%, rgba(15, 58, 169, 0.77) 99.99%);
+}
+
+.Catalogues{
+    position: relative;
+    top: 3rem;
+    margin: auto;
+    width: 80%;
+
+  display: grid;  
+  grid-template-columns: auto auto auto auto;
+  gap: 1rem;
+  row-gap: 0.2rem;
+}
+.type{
+    
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 600;
+font-size: 25px;
+line-height: 30px;
+color: #fff;
+position: relative;
+top: -6.5rem;
+left: 5rem;
+}
+.Join{
+    margin-top: 10rem;
+    background: linear-gradient(270deg, rgba(44, 2, 70, 0.58) 0%, rgba(0, 0, 0, 0.58) 100%);
+    height: 640px;
+}

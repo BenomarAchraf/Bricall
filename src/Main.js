@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Navbar from "./Navbar/Navbar";
 import Footer from "./Footer/Footer";
 import Home from "./Homepage/Home";
+import "@fontsource/poppins";
 const Main = () => {
   return (
     <BrowserRouter>

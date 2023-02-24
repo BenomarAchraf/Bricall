@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from "react-router-dom";
 import "./Navbar.css";
-import logo from "../Assets/Images/Logo.svg"
+import logo from "../Assets/Images/Logo1.svg"
 import "@fontsource/poppins";
 const Navbar = () => {
   return (
@@ -28,10 +28,10 @@ const Navbar = () => {
                 <Link className='SignUp'>
                     Sign Up
                 </Link>
-                <Link className='SignIn'>
-                <button className='Sign'>
+                <Link className='SignIn' to="/">
+                
                     Sign In
-                </button>
+                
                 </Link>
             </div>
             
