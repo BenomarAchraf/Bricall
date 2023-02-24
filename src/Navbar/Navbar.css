@@ -44,9 +44,21 @@
     color: black;
 }
 .SignIn{
-    padding-left: 2rem;  
+     
     position: relative;
-    top: -0.4rem;
+    top:-0.381rem;
+    left: 1rem;
+    font-size: large;
+    text-align: center;
+    font-family: 'Poppins';  
+    height: 2rem;
+    width: 5.5rem;
+    border-style: solid;
+      background: linear-gradient(#fff, #fff) padding-box,
+      linear-gradient(45deg, slateblue, coral) border-box;
+border: 5px solid transparent;
+border-radius: 50px;
+ text-decoration: none;
 
 }
 
