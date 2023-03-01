@@ -1,0 +1,67 @@
+.Sug{
+    border-radius: 20px;
+    border: 4px solid rgb(0, 0, 0);
+    width: 306.65px;
+    height: 409px;
+}
+.Slider{
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: auto;
+    gap: 5rem;
+}
+.Element{
+    display: flex;
+    flex-direction: column;
+}
+.infos{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.5px;
+    margin-top: -4rem;
+    margin-right: 1.3%;
+    margin-left: 1.3%;
+    padding-left: 1.3rem;
+    background: linear-gradient(90deg, #6A5BCD 12.96%, #FF7F50 56.08%);
+
+}
+
+.infos1{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: #ffffff;
+    margin-top: -1rem;
+    margin-left: 1.7rem;
+}
+
+
+
+.Achraf{
+    cursor: pointer;
+    box-sizing: border-box;
+    margin-top: -4.8rem;
+    margin-left: 15rem;
+    width: 55.28px;
+    height: 70.72px;
+    border-radius: 19px;
+    border: 2px solid #FFFFFF;
+    background: url("../../Assets/Images/achraf.jpg") center center/cover ;
+}
+
+/*box-sizing: border-box;
+    border: 2px solid #FFFFFF;
+    filter: drop-shadow(0px 15px 75px rgba(27, 25, 68, 0.3));
+    backdrop-filter: blur(13px);
+    border-radius: 19px;
+    width: 56.28px;
+    height: 54.72px;*/

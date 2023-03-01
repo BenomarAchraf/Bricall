@@ -17,3 +17,60 @@ transform: rotate(-112.15deg);
 width: 304.78px;
 height: 333.32px;
 }
+.images{
+    margin-left: -2%;
+}
+
+.JoinUs{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 45%;
+    margin-left:55%;
+    margin-top: -40rem;
+}
+
+.JoinUs > :nth-child(1){
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 70px;
+    width: 80%;
+    line-height: 70px;
+    color: #FFFFFF;
+    margin: auto;
+}
+
+.JoinUs > :nth-child(2){
+    font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 23px;
+line-height: 48px;
+/* or 209% */
+width: 95%;
+
+text-align: center;
+color: #b88282;
+}
+
+.Join11{
+    
+}
+
+.JoinUs > :nth-child(3){
+    cursor: pointer;
+    margin-left: 25%;
+    width: 27%;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 30px;
+    text-align: center;
+    color: #000000;
+    border-radius: 30px;
+    border: 1px solid transparent;
+    background: linear-gradient(89.99deg, #80DCCB 0.01%, #16D3B1 147.15%);
+
+}

@@ -9,12 +9,12 @@ import Join from "./Component1/Join";
 import { data } from "./data";
 import "@fontsource/poppins";
 const Home = () => {
-
         const [Data, setData] = useState(data);
         const [val, setVal] = useState('');
+        const type="Categories";
         return (
             <>
-            <div className = 'Home' >
+            <div className='Home'>
                 <img className = 'Image' src = { Image }/>
                 <p className = 'clients' > 
                     Connecting Clients 
@@ -28,7 +28,7 @@ const Home = () => {
                 </p> 
             </div> 
             <div className = 'Catalogue' >
-                <Introcatalogue val = { val } setVal = { setVal } /> 
+                <Introcatalogue val = { val } setVal = { setVal } type={type} /> 
                 <div className = "Catalogues" > 
                     {Data.map((item, i) => {
                         const { url, text } = item;
@@ -39,12 +39,10 @@ const Home = () => {
                                     { text } 
                                 </span> 
                             </div>)
-
                         })} 
                 </div>
                 <div className = "Join" >
                     <Join />
-                    <img className = 'Provide' src = { image } alt = '' />
                 </div> 
             </div>
             </>
@@ -53,41 +51,4 @@ const Home = () => {
         }
         export default Home;
 
-        /*
-            <>
-            <div className = 'Home' >
-                <img className = 'Image' src = { Image }/>
-                <p className = 'clients' > 
-                    Connecting Clients 
-                </p> 
-                <img className = 'Fleche' src = { Fleche }/> 
-                <p className = 'Empoyee' > 
-                    With Employees 
-                </p> 
-                <p className = 'Intro' >
-                    Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.Velit officia consequat duis enim velit mollit.Exercitation veniam consequat. 
-                </p> 
-            </div> 
-            <div className = 'Catalogue' >
-                <Introcatalogue val = { val } setVal = { setVal } /> 
-                <div className = "Catalogues" > 
-                    {Data.map((item, i) => {
-                        const { url, text } = item;
-                        return ( 
-                            <div key = { i } className = "card" > 
-                                { url } 
-                                <span className = "type" > 
-                                    { text } 
-                                </span> 
-                            </div>)
-
-                        })} 
-                </div>
-                <div className = "Join" >
-                    <Join />
-                    <img className = 'Provide' src = { image } alt = '' />
-                </div> 
-            </div>
-            </>
-
-        */
+       
