@@ -1,0 +1,43 @@
+.subs{
+    width: 1039.23px;
+    height: 242.33px;
+    margin:auto;
+    background: url("../../Assets/Images/BG-1.png") center center/cover no-repeat;;
+}
+.sb{
+    position: relative;
+    top: 5rem;
+}
+
+.subs > :nth-child(1){
+    width: 467.49px;
+    height: 38.09px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 40px;
+    margin: auto;
+    padding-top: 30px;
+    line-height: 48px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.icons{
+    margin: auto;
+    padding-top: 7rem;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    width: 60%;
+    gap: 10rem;
+    justify-content: center;
+}
+
+.icon{
+    fill: #FFFFFF;
+    width: 40.07px;
+    height: 30.96px;
+    cursor: pointer;
+    
+}
+

@@ -1,0 +1,133 @@
+.LivingBG{
+    z-index: 1;
+    height:150rem;
+    background: linear-gradient(0deg, rgba(15, 18, 51, 0.64), rgba(15, 18, 51, 0.64)), linear-gradient(89.99deg, rgba(184, 143, 209, 0.77) 0.01%, rgba(255, 255, 255, 0.77) 0.01%, rgba(15, 58, 169, 0.77) 99.99%);
+}
+.Introlr > :nth-child(1){
+    width: 100%;
+    height: auto;
+
+    
+}
+.Introlr > :nth-child(2){
+    z-index: 2;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 60px;
+    text-align: center;
+    letter-spacing: -0.02em;
+    color: #FFFFFF;
+    margin-top: -8rem;
+}
+.article{
+    z-index: 5;
+    background-color: #FFFFFF;
+    height: 60rem;
+    width: auto;
+    margin-top: 6rem;
+
+}
+
+.suggestion{
+    display: flex;
+    margin-left: 4.5rem;
+    padding-top: 2rem;
+}
+
+.Logo22{
+
+
+}
+
+.suggestion > :nth-child(2){
+    
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 35px;
+line-height: 60px;
+
+display: flex;
+align-items: flex-end;
+text-align: center;
+letter-spacing: -0.02em;
+margin-left: 2.5rem;
+color: #A53C3C;
+
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+} 
+
+.suggestion > :nth-child(3){
+    height: 6px;
+    width: 60%;
+    background-color: black;
+    margin-top: 4rem;
+    margin-left: 2.5rem;
+    border-radius: 10px;
+}
+
+.down{
+    margin-left: 47%; 
+    position: relative;
+    top: 8%;
+    fill: #20df19;
+    width: 50.07px;
+    height: 40.96px;
+    cursor: pointer;
+    animation-name: Down;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate; 
+}
+
+@keyframes Down {
+    0%   {left:0px; top:0rem;}
+    50%  { left:0px; top:2.5rem;}
+    100% {left:0px; top:0rem;}
+  }
+
+/*
+width: 214px;
+height: 316px;
+
+background: linear-gradient(180deg, rgba(255, 255, 255, 0) 50%, #FFFFFF 100%), linear-gradient(0deg, rgba(123, 174, 251, 0.5), rgba(123, 174, 251, 0.5));
+border-radius: 20px;
+*/
+
+.Livingroom{
+
+
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+}
+.livr{
+    z-index: 2;
+    margin-top: -11rem;
+    border-radius: 20px;
+    animation-name: chraf;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+
+}
+
+@keyframes chraf {
+    0%   {left:0px; top:0rem;}
+    100% {left:0px; top:5rem;}
+}
+.livr1{
+    display: none;
+}
+.livr2{
+    display: none;
+}
+.livr3{
+    display: none;
+}
+.livr4{
+    display: none;
+}
+.livr5{
+    display: none;
+}
