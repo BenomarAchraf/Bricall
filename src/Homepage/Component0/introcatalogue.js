@@ -1,10 +1,10 @@
 import React from 'react'
 import "./Component0.css"
-const introcatalogue = ({val , setVal}) => {
+const introcatalogue = ({val , setVal ,type}) => {
   return (
     <div className='intraCat'>
         <p className='Categories'>
-        Categories
+        {type}
         </p>
         <div className='ligne'>
         </div>
