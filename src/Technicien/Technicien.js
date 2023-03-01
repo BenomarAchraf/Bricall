@@ -2,6 +2,7 @@ import React from 'react';
 import Infos from './components/Info'
 import Realisations from './components/Realisations'
 import Rating from './components/Rating'
+import ContactLink from './components/ContactLink'
 
 import '../Contact/Contact.css'
 const Technicien = () => {
@@ -11,6 +12,8 @@ const Technicien = () => {
 
       <Infos></Infos>
       <Realisations></Realisations>
+            <ContactLink></ContactLink>
+
       <Rating></Rating>
     </div>
   );
