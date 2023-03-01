@@ -1,6 +1,6 @@
 body{
-    position: relative;
-width: 1283px;
-height: 2702px;
-background: linear-gradient(180deg, rgba(129, 159, 238, 0.79) 2.55%, rgba(129, 159, 238, 0.6241) 2.56%, rgba(19, 75, 220, 0.057591) 26.31%, rgba(56, 81, 146, 0) 33.63%);
+  position: relative;
+  width: 100%; /* La largeur de l'élément est définie à 100% de la largeur de la fenêtre du navigateur */
+  height: 100%; /* La hauteur de l'élément est définie à 100% de la hauteur de la fenêtre du navigateur */
+  background: linear-gradient(180deg, rgba(129, 159, 238, 0.79) 2.55%, rgba(129, 159, 238, 0.6241) 2.56%, rgba(19, 75, 220, 0.057591) 26.31%, rgba(56, 81, 146, 0) 33.63%);
 }

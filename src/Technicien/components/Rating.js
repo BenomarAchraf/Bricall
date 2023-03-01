@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import "./Realisations.css"
 import rate from "../../Assets/Images/rate.png"
+
 import déco from "../../Assets/Images/addition.png"
+
 
 const Rating = () => {
   const [rating, setRating] = useState(0);
@@ -12,7 +14,7 @@ const Rating = () => {
   };
 
   return (
-      <div >
+    <div >
           <div className="evaluation">
            <h2 >Evaluer le service </h2>
           <img src={rate}
@@ -44,12 +46,7 @@ const Rating = () => {
       })}
       </div>
           </div>
-          <div className="evaluate"><h2 >Contactez-moi </h2>
-              <h3>Si vous avez besoin d'une prestation </h3>
-              <Link to="/contact">
-                <button>Follow the link</button>
-              </Link>
-</div>
+        
     </div>
   );
 };
