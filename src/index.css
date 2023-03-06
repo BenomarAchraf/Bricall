@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -69,6 +70,8 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+=======
+>>>>>>> dd97cfa4409de384eb292cdd11b06965b243cbec
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -76,6 +79,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+<<<<<<< HEAD
+=======
+
+>>>>>>> dd97cfa4409de384eb292cdd11b06965b243cbec
 }
 
 code {

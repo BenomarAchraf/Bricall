@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "my-vue-app",
   "private": true,
   "version": "0.0.0",
@@ -25,6 +26,8 @@
   }
 }
 {
+=======
+>>>>>>> dd97cfa4409de384eb292cdd11b06965b243cbec
   "name": "bricall",
   "version": "0.1.0",
   "private": true,
