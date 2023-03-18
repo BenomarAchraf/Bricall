@@ -1,3 +1,4 @@
+import React from 'react';
 import Sug from "../../Assets/Images/Sug.svg"
 import Sug1 from "../../Assets/Images/Sug1.svg"
 import Sug2 from "../../Assets/Images/Sug2.svg"

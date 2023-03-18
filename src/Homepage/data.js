@@ -1,3 +1,4 @@
+import React from 'react';
 import Card from "../Assets/Images/Card.svg"
 import Card1 from "../Assets/Images/Card1.svg"
 import Card2 from "../Assets/Images/Card2.svg"

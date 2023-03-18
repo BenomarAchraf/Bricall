@@ -5,6 +5,7 @@ import section from "../../Assets/Images/section2.png"
 import section2 from "../../Assets/Images/section2'.png"
 import { RealisationsList } from './RealisationsList';
 import RealisationItem from './RealisationItem';
+import RealisationComponent from './RealisationComponent';
 function Realisations({id, image, name}) {
     return (
       <div className="menu">
@@ -12,19 +13,9 @@ function Realisations({id, image, name}) {
         <h1 className="menuTitle1" ><FaTools/></h1>
       <h1 className="menuTitle2">Découvrez mes réalisations</h1>
       <div className="menuList">
-        {RealisationsList.map((menuItem, key) => {
-          return (
-            <div>
-              <RealisationItem
-              key={key}
-              image={menuItem.image}
-              name={menuItem.name}
-            />
-            </div>
-          );
-        })}
+        
         </div>
-        <img className="section2" src={section2} alt="" />
+        <img className="section2" src="{section2}" alt="" />
         </div>
   );
 }

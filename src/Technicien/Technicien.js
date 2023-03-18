@@ -1,6 +1,7 @@
 import React from 'react';
 import Infos from './components/Info'
 import Realisations from './components/Realisations'
+import Realisation from './components/RealisationComponent'
 import Rating from './components/Rating'
 import ContactLink from './components/ContactLink'
 
@@ -11,7 +12,7 @@ const Technicien = () => {
     <div>
 
       <Infos></Infos>
-      <Realisations></Realisations>
+      <Realisation></Realisation>
             <ContactLink></ContactLink>
 
       <Rating></Rating>
