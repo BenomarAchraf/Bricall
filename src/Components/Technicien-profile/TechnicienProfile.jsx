@@ -53,6 +53,14 @@ export default function TechnicienProfile(){
               <img src={category6} alt="Image 6" />
               <p>Legend 6</p>
             </div>
+           
+            <button className="profile-button" >
+            <a href="/addcategory
+            " > Add Category</a>
+
+              
+             </button>
+          
           </div>
         </div>
       );

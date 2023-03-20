@@ -1,82 +1,184 @@
 import React, { useState } from "react";
-import axios from 'axios';
-import './WorkDetails.css';
+import "./WorkDetails.css";
+import Creatable from "react-select/creatable";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCamera } from "@fortawesome/free-solid-svg-icons";
-import { useNavigate } from 'react-router-dom';
 
+const roles = [
+  { label: "gardening", value: 1 },
+  { label: "Carpentry", value: 2 },
+  { label: "electricity", value: 3 },
+  { label: "plumbing", value: 4 },
+  { label: "tapestry", value: 5 },
+  { label: "plastering", value: 6 },
+];
 
-export default function WorkDetails() {
-    const [imagePath, setImagePath] = useState("");
-    const [name, setName] = useState("");
-    const [category, setCategory] = useState("");
-    const [description, setDescription] = useState("");
-    const [image, setImage] = useState(null);
-    const navigateTo = useNavigate();
+const customStyles = {
+  option: (provided, state) => ({
+    ...provided,
+    borderBottom: "1px dotted pink",
+    color: state.isSelected ? "red" : "blue",
+    padding: 20,
+  }),
+};
 
+const WorkDetails = (props) => {
+  const [name, setName] = useState("");
+  const [roleValue, setRoleValue] = useState([]);
+  const [tagInputValue, setTagInputValue] = useState("");
+  const [tagValue, setTagValue] = useState([]);
+  const [selectedFile, setSelectedFile] = useState(null);
+  const [imageUrl, setImageUrl] = useState("");
 
-    const handleNameChange = (e) => {
-        setName(e.target.value);
-      };
-    
-      const handleCategoryChange = (e) => {
-        setCategory(e.target.value);
-      };
-    
-      const handleImageUpload = (e) => {
-        const file = e.target.files[0];
-        const reader = new FileReader();
-        reader.onload = () => {
-          setImage(reader.result);
-        };
-        reader.readAsDataURL(file);
-      };
-    
-      const handleDescriptionChange = (e) => {
-        setDescription(e.target.value);
-      };
-    
-      const handleSubmit = (e) => {
-        e.preventDefault();
-    
-        const data = new FormData();
-        data.append("name", name);
-        data.append("category", category);
-        data.append("image", image);
-        data.append("description", description);
-    
-        axios.post("http://localhost:8080/works", data)
-          .then(() => {
-            // Rediriger vers la page de profil de l'utilisateur
-            navigateTo.push("/profile");
-          })
-          .catch((error) => {
-            console.error(error);
-          });
-      };
+  const handleChange = (field, value) => {
+    switch (field) {
+      case "roles":
+        setRoleValue(value);
+        break;
+
+      case "tags":
+        setTagValue(value);
+        break;
+
+      default:
+        break;
+    }
+  };
+
+  const handleKeyDown = (event) => {
+    if (!tagInputValue) return;
+    switch (event.key) {
+      case "Enter":
+      case "Tab":
+        setTagValue([...tagValue, createOption(tagInputValue)]);
+        setTagInputValue("");
+        event.preventDefault();
+        break;
+
+      default:
+        break;
+    }
+  };
+
+  const createOption = (label) => ({
+    label,
+    value: label,
+  });
+
+  const handleInputChange = (value) => {
+    setTagInputValue(value);
+  };
+
+  const handleFileSelect = (event) => {
+    setSelectedFile(event.target.files[0]);
+  };
+
+  const handleFileUpload = async () => {
+    const formData = new FormData();
+    formData.append("image", selectedFile);
+
+    const response = await fetch("/api/v1/upload", {
+      method: "POST",
+      body: formData,
+    });
+
+    const data = await response.json();
+    setImageUrl(data.imageUrl);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    fetch('/api/v1/addWork', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ title, category })
+    })
+      .then(response => response.json())
+      .then(data => {
+        // Show the success message to the user
+        alert('Work added successfully!');
+        // Navigate back to the profile page
+        props.history.push('/profile');
+      })
+      .catch(error => console.error(error));
+  };
   return (
     <div className="workpage-container">
-    <h1 className="worktitle">Add Work</h1>
-    <h2 className="worksubtitle">Submit your work here</h2>
-    <div className="workform-container">
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="name" className='worklabel'>Name</label>
-        <input className='workinput' type="text" id="name" name="name" value={name} onChange={handleNameChange} />
-        <label htmlFor="category" className='worklabel'>Category</label>
-        <input className='workinput' type="text" id="category" name="category" value={category} onChange={handleCategoryChange} />
+      <h1 className="worktitle">Add Work</h1>
+      <h2 className="worksubtitle">Submit your work here</h2>
+      <div className="workform-container">
         <div>
-          <label htmlFor="image" className='worklabel'>
-            Upload image
-            <FontAwesomeIcon icon={faCamera} className='camera-icon'/>
-          </label>
-          <input className='workinput' type="file" id="image" onChange={handleImageUpload} name="image" accept="image/*" />
-          {image && <img className='workinput image-preview' src={image} alt="Preview" />}
+          <label className="worklabel">Name</label>
+          <input
+            type="text"
+            className="workinput"
+            value={name}
+            onChange={(event) => setName(event.target.value)}
+          />
         </div>
-        <label htmlFor="description" className='worklabel'>Description</label>
-        <textarea id="description" name="description" className='workinput1' value={description} onChange={handleDescriptionChange}></textarea>
-        <button type="submit" className='worksubmit'> Submit </button>
-      </form>
+
+        <div>
+          <label className="worklabel">Category</label>
+          <Creatable
+            isClearable
+            isMulti
+            onChange={(value) => handleChange("roles", value)}
+            options={roles}
+            value={roleValue}
+            styles={customStyles}
+          />
+        </div>
+      <div className="exception" >
+      <label htmlFor="image-upload" className="worklabel">
+        <i className="fas fa-upload"   >
+        <FontAwesomeIcon icon={faCamera} className='camera-icon'/>
+        </i>
+          Upload image    
+ </label>
+          <input
+        type="file"
+        id="image-upload"
+        accept="image/*"
+        className="workinput" 
+
+        onChange={handleFileSelect}
+
+      />
+       {imageUrl && (
+    <img src={imageUrl} alt="Preview" className="image-preview" onChange={handleFileUpload} />
+  )}
+        
+      </div>
+
+      <div >
+        <label className="worklabel">Tag(s)</label>
+        <Creatable
+          isClearable
+          isMulti
+          components={
+            { DropdownIndicator: null }
+          }
+          inputValue={tagInputValue}
+          menuIsOpen={false}
+          onChange={(value) => handleChange('tags', value)}
+          placeholder='Type something and press enter...'
+          onKeyDown={handleKeyDown}
+          onInputChange={handleInputChange}
+          value={tagValue}
+        />
+      </div>
+
+      
+
+      <div >
+        <button className="worksubmitbutton" onChange={handleSubmit}>Submit</button>
+      </div>
     </div>
   </div>
-  );
-  }
+
+
+)
+}
+
+  export default WorkDetails;
+
