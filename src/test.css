@@ -1,0 +1,203 @@
+.test{
+    height: 70rem;
+    margin-top: 4rem;
+    margin: auto;
+    background: rgb(255, 255, 255);
+}
+
+.imagetest{
+    position: relative;
+    left:40%;
+    top: 10%;
+    animation: ach 2s linear;
+}
+@keyframes ach {
+    to {
+        transform: rotate(360deg);
+      }
+}
+
+.box{
+
+
+}
+/*
+.box1{
+    margin: auto;
+    width: 30rem;
+    height: 30rem;
+
+
+}
+.comment-section  {
+    background-color: #f7f7f7;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 30rem;
+    height: 30rem;
+    overflow:auto  scroll ;
+  }
+
+  
+.Logoo{
+    background-color: rgba(0, 0, 255, 0.37);
+    width: 44px;
+    height: 44px;
+    border-radius: 60px;
+    text-align: center;
+    margin-left: 1rem;
+    
+
+}  
+.lgo{
+    margin-top: 10px;
+
+}
+.Comment{
+    display: grid;
+    grid-template-columns: 20% 80%;
+
+}
+.Cm{
+    z-index:2 ;
+    display: grid;
+    margin-left: -0.5rem;
+    gap: 1rem;
+    grid-template-columns: 60% 50%;
+}
+.Dd{
+  font-size: small;
+  color: #9e9d9d;
+}
+.bc{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 35%;
+    height: 15rem;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    margin-bottom: 1rem;
+}
+
+.Name{
+    font-family: roboto;
+    font-weight: 530;
+    font-size: larger;
+    cursor: pointer;
+
+}
+.cc{
+    grid-column: 1/3;
+    grid-row: 2/5;
+    width: 80%;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    
+}
+
+.putc{
+
+
+    height: 7%;
+    width: 35%;
+    background-color: #e9e9e9d8;
+    border-radius: 5px;
+}
+
+
+.putc > :nth-child(1){
+  border: 0;
+  border-bottom: 1.7px solid rgb(36, 36, 36);
+  outline: 0;
+  color: rgb(0, 0, 0);
+  padding: 13px 0;
+    width: 55%;
+    padding-left: 4px;
+    font-size: 16px;
+  background: transparent;
+    position: relative;
+    left:17%;
+    top:10%;
+
+}
+
+
+
+.putc > :nth-child(2){
+    cursor: pointer;
+    width: 70px;
+    height: 43px;
+    border-radius: 8px;
+    background: #7F56D9;
+
+    position: relative;
+    left: 25%;
+    top: 20%;
+    border: 0px solid #7F56D9;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    color: blanchedalmond;
+}
+.icone{
+    height: 25px;
+    width: 25px;
+    fill: #f3f2f5;
+    position: relative;
+    left:-0.3rem;
+    top:0.9rem;
+    color: rgba(0, 0, 0, 0.356);
+}
+.icone1{
+    height: 25px;
+    width: 25px;
+    fill: #f3f2f5;
+    position: relative;
+    left: 47%;
+    top: -1.8rem;
+    color: rgba(0, 0, 0, 0.356);
+}
+
+.btn{
+    background: transparent;
+  outline: none;
+  border: none;
+}
+.posemoji{
+    position: relative;
+    left: 30%;
+}
+
+ 
+.Logoo1{
+    background-color: rgba(72, 201, 151, 0.37);
+    width: 44px;
+    height: 44px;
+    border-radius: 60px;
+    text-align: center;
+    position: relative;
+    left: -20rem;
+    top:-2.5rem;
+
+}  
+.lgo1{
+    position: relative;
+    top:8.5px;
+    font-size: 20px;
+    font-weight: 100;
+}
+
+.Logoo2{
+    background-color: rgba(72, 201, 151, 0.37);
+    width: 44px;
+    height: 44px;
+    border-radius: 60px;
+    text-align: center;
+    position: relative;
+    top: -32.45rem;
+    left:0.85rem;
+
+}  */

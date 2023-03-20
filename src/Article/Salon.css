@@ -1,0 +1,153 @@
+.salon{
+    height: 110rem;
+    margin-top: 0rem;
+    background: rgb(255, 255, 255);
+    overflow-y: hidden;
+    z-index: 2;
+}
+
+.Card{
+    box-shadow: 2px 2px 5px 5px rgb(170, 170, 170);
+    margin-left:10% ;
+    margin-top: 2rem;
+    height: 44rem;
+    width: 80%;
+    border-radius: 20px 20px 20px 20px;
+    display: flex;
+    flex-direction: row;
+    z-index: 3;
+}
+
+.Selected{
+    width: 50%;
+    height: 100%;
+    border-radius: 20px 0 0 20px;
+    box-shadow: 0px 0px 0px 0.5px rgb(170, 170, 170);
+}
+
+.SelectedInfo{
+    display: flex;
+    flex-direction: column;
+    
+}
+.icons12{
+    display: grid;
+    grid-template-columns: 10% 10% 10% 40% ;
+    margin-top: 3%;
+    margin-left: 8%;
+    column-gap: -2rem;
+}
+
+
+
+.ic{
+    width: 25px;
+    height: auto;
+    cursor: pointer;
+    margin-top: 14%;
+    margin-left: 5%;
+}
+
+.Save{
+    width: 7rem;
+    height: 3rem;
+    background-color: rgba(219, 63, 75, 0.8);
+    border-radius: 30px;
+    border: 1px solid #000000;
+    text-align: center;
+    text-decoration: none;
+    font-size: 25px;
+    font-family: roboto;
+    font-weight: bolder;
+    color:#fff;
+    cursor: pointer;
+    margin-left: 13rem;
+    
+}
+.TitleLr{
+    width: 90%;
+    position: relative;
+    align-items: center;
+    top: -12%;
+    margin: auto;
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    font-size: 25px;
+    color: #000000;
+    line-height: 40px;
+}
+.Descriptionlr{
+    width: 85%;
+    font-family: 'Inter';
+    margin: auto;
+    line-height: 25px;
+    position: relative;
+    font-size: 20px;
+    top: -41%;
+    color: rgb(138, 135, 135);
+}
+.DownF{
+    position: relative;
+    top: 4%;
+    fill: aqua;
+}
+
+.DownF1{
+    position: relative;
+    top: 4%;
+    transform: rotate(-90deg);
+    
+}
+
+.Commentaires{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    top: -54%;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 26px;
+    left: 7%;
+    gap: 1rem;
+
+}
+.CommentChat{
+    position: relative;
+    z-index: 3;
+    
+
+}
+.chatbox{
+    position: relative;
+    left: 52%;
+    width: 85rem;
+    top:-21.5rem;
+}
+
+.SuggEl{
+    height: 22rem;
+    background-color: blue;
+    margin: auto;
+    position: relative;
+    top: -15rem;
+}
+
+.MSFL{
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 40px;
+    margin-left: 35%;
+    padding-top: 2%;
+    margin-bottom: 3%;
+}
+
+.positionSS{
+    z-index: 4;
+    position: relative;
+    top: -20rem;
+}
