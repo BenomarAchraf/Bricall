@@ -10,14 +10,14 @@ const Navbar = () => {
             <img className='logo' src={logo}/>
         </Link>
         <div className='pages'>
-        <Link to="/Categories/Livingroom" className='pp' >
+        <Link to="/Livingroom" className='pp' >
             Products
             </Link>
-            <Link className='pp' to="/">
+            <Link className='pp' to="/test">
            Features
             </Link>
             
-            <Link className='pp' to="/">
+            <Link className='pp' to="/Livingroom/1">
             Pricing
             </Link>
             
