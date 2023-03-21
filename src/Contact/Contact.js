@@ -12,11 +12,12 @@ function Contact() {
       .then((result) => {
         console.log(result.text);
         //send notification to technician
-        fetch('/api/send-notification', {
+        fetch('http://localhost:8090/push-notifications', {
                     method: 'POST',
                     body: JSON.stringify({
-                        userId: '123', //get user id
-                        message: 'New message received'
+                      content: 'New message received',
+                      receiver_id: '123', //get user id
+
                     }),
                     headers: {
                         'Content-Type': 'application/json'

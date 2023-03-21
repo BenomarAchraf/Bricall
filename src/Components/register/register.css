@@ -1,0 +1,121 @@
+.create-account-title{
+    font-family: 'Itim';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 60px;
+    line-height: 80px;
+    
+    color: #FFFFFF;
+    
+   
+}
+.register-image{
+width: 400px;
+height: 600px;
+padding-right: 200px;
+}
+.form-style-register{
+    background: rgba(255, 255, 255, 0.4);
+box-shadow: -31px 22px 18px rgba(0, 0, 0, 0.25);
+border-radius: 21px;
+width:500px ;
+height:500px ;
+}
+.container-register-input{
+   
+
+}
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+.form-style{
+  background: rgba(255, 255, 255, 0.4);
+box-shadow: -31px 22px 18px rgba(0, 0, 0, 0.25);
+width:550px ;
+height: 1000px;
+border-radius: 21px;
+}
+.label-style{
+font-family: 'Itim';
+font-style: bold;
+font-weight: 400;
+font-size: 20px;
+line-height: 38px;
+color: #3654B0;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  padding-left: 10px;
+  gap: 40px;
+}
+
+.form-column {
+  display: flex;
+  flex-direction: column;
+  width: 48%;
+  
+}
+.rectangle-style{
+  background: rgba(255, 255, 255, 0.37);
+border-bottom: 3px solid #022641;
+box-shadow: -7px 7px 11px 1px rgba(173, 169, 169, 0);
+outline-color: #FFFFFF;
+width: 150px;
+}
+
+label {
+  margin-bottom: 0.5rem;
+}
+
+input {
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  border: 1px solid #ccc;
+}
+
+.submit-button {
+  background: #5E66DB;
+border-radius: 61px;
+width: 150px;
+color: #FFFFFF;
+margin-top: 20px;
+
+}
+
+.already-have-account {
+  margin-top: 1rem;
+  font-size: 0.875rem;
+}
+.have-account-text{
+font-family: 'Itim';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 27px;
+text-align: center;
+
+color: #000000;
+
+}
+.register-link{
+  font-family: 'Itim';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 27px;
+text-align: center;
+ color: #3741DE
+
+}

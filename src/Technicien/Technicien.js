@@ -1,5 +1,7 @@
 import React from 'react';
 import Infos from './components/Info'
+import TechnicianProfile from './components/TechnicianProfile'
+
 import Realisations from './components/Realisations'
 import Realisation from './components/RealisationComponent'
 import Rating from './components/Rating'
@@ -10,11 +12,9 @@ const Technicien = () => {
   
   return (
     <div>
-
-      <Infos></Infos>
+      <TechnicianProfile></TechnicianProfile>
       <Realisation></Realisation>
-            <ContactLink></ContactLink>
-
+      <ContactLink></ContactLink>
       <Rating></Rating>
     </div>
   );

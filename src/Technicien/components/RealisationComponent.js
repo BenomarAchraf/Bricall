@@ -21,7 +21,6 @@ class RealisationComponent extends React.Component{
                 <img className="menu-section" src={section} alt="" />
                 <h1 className="menuTitle1" ><FaTools/></h1>
                 <h1 className="menuTitle2">Découvrez mes réalisations</h1>
-                                                        <img src="https://drive.google.com/file/d/1WomVs4DyoFroQs3DR8J-NNBJ5a5Ge0Zm/view?usp=share_link" alt="" />
 
                 <div className="menuList">
                     {this.state.realisations.map(
