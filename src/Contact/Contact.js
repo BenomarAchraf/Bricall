@@ -12,7 +12,7 @@ function Contact() {
       .then((result) => {
         console.log(result.text);
         //send notification to technician
-        fetch('http://localhost:8090/push-notifications', {
+        fetch('http://localhost:8081/api/push-notifications', {
                     method: 'POST',
                     body: JSON.stringify({
                       content: 'New message received',
