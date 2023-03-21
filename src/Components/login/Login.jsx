@@ -1,12 +1,49 @@
 import './login.css';
 import loginImage from "../../assets/loginImage.png";
+import { useState } from 'react';
+import AuthService from "../../services/auth.service";
+import { useNavigate } from 'react-router-dom';
+
 
 
 
  function Login(){
-    const handleInputChange = (event) => {
-        setInputText(event.target.value);
-      };
+    const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
+  const navigate=useNavigate();
+  const onChangeUsername = (e) => {
+    const username = e.target.value;
+    setUsername(username);
+  };
+
+  const onChangePassword = (e) => {
+    const password = e.target.value;
+    setPassword(password);
+  };
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+
+
+
+
+
+ 
+      AuthService.login(username, password).then(
+        () => {
+          navigate("/profile");
+          window.location.reload();
+        },
+        (error) => {
+          const resMessage = error.response.data;
+
+        }
+      );
+    
+  };
+   
+
  return (
     
  <div >
@@ -21,18 +58,26 @@ import loginImage from "../../assets/loginImage.png";
     <div className='container-input'>
 <p>
                     <label className='username-label'>Username</label><br/>
-                    <input className='username-input' type="text" name="first_name" required />
+                    <input className='username-input' type="text" name="first_name" 
+  value={username}
+  onChange={onChangeUsername}
+                    required />
                 </p>
               
                 <p>
                     <label className='password-label'>Password</label><br/>
-                    <input className='password-input' type="password" name="password" requiredc />
+                    <input className='password-input' type="password" name="password" 
+                    
+                    value={password}
+                    onChange={onChangePassword}
+                    requiredc />
                 </p>
                 <p className='forget-password-container'>
                     <input type="checkbox" className='checkbox' name="checkbox" id="checkbox" required /> <span className='remember-password'>Remember password </span>.
                 </p>
                 <p>
-                    <button className='login-button' id="sub_btn" type="submit">Register
+                    <button className='login-button' id="sub_btn" type="submit" onClick={handleLogin
+                    }>Login
                         </button>
                 </p>
                 <p className='forget-password'>
