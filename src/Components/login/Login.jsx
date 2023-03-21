@@ -1,5 +1,5 @@
 import './login.css';
-import loginImage from "../../assets/loginImage.png";
+import loginImage from "../../Assets/loginImage.png";
 import { useState } from 'react';
 import AuthService from "../../services/auth.service";
 import { useNavigate } from 'react-router-dom';
@@ -24,12 +24,6 @@ import { useNavigate } from 'react-router-dom';
 
   const handleLogin = (e) => {
     e.preventDefault();
-
-
-
-
-
- 
       AuthService.login(username, password).then(
         () => {
           navigate("/profile");

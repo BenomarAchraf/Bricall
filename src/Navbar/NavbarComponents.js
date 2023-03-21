@@ -1,9 +1,21 @@
 import React from 'react'
 import { Link } from "react-router-dom";
+import AuthService from "../services/auth.service";
+
 import "./Navbar.css";
 import logo from "../Assets/Images/Logo3.svg"
 import "@fontsource/poppins";
 const NavbarComponents = () => {
+    const user = AuthService.getCurrentUser();
+    const logout = () => {
+  return new Promise((resolve, reject) => {
+    AuthService.logout();
+    resolve();
+  }).then(() => {
+    nav("/login", { replace: true });
+  });
+}
+
   return (
     <div className='nav'>
         <Link className='pp' to="/">
@@ -23,18 +35,24 @@ const NavbarComponents = () => {
             
             <Link className='pp' to="/">
             Support
-            </Link>
+              </Link>
+            {user==null&& <>
             <div className='sign'>
-                <Link className='SignUp'>
+                <Link className='SignUp'to="/register">
                     Sign Up
                 </Link>
-                <Link className='SignIn' to="/">
-                
+                <Link className='SignIn' to="/login">
                     Sign In
-                
                 </Link>
             </div>
-            
+              </>}
+              {user!=null &&
+<>
+      <Link className='SignIn' onClick={logout}>
+          Log out
+        </Link>
+</>
+}
         </div>
 
     </div>

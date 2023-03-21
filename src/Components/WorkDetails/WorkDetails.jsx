@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./WorkDetails.css";
+import "./workdetails.css";
 import Creatable from "react-select/creatable";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCamera } from "@fortawesome/free-solid-svg-icons";

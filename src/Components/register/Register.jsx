@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import './register.css';
-import registerImage from "../../assets/registerImage.png";
+import registerImage from "../../Assets/registerImage.png";
 import { isEmail } from "validator";
 import CheckButton from "react-validation/build/button";
 import Form from "react-validation/build/form";

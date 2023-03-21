@@ -1,12 +1,12 @@
 import React from "react";
 import "./TechnicienProfile.css";
-import technicienprofile from "../../assets/technicienprofile.png";
-import category1 from "../../assets/category1.png";
-import category2 from "../../assets/category2.png";
-import category3 from "../../assets/category3.png";
-import category4 from "../../assets/category4.png";
-import category5 from "../../assets/category5.png";
-import category6 from "../../assets/category6.png";
+import technicienprofile from "../../Assets/technicienprofile.png";
+import category1 from "../../Assets/category1.png";
+import category2 from "../../Assets/category2.png";
+import category3 from "../../Assets/category3.png";
+import category4 from "../../Assets/category4.png";
+import category5 from "../../Assets/category5.png";
+import category6 from "../../Assets/category6.png";
 
 
 
