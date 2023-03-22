@@ -5,21 +5,27 @@ import Login from  "./components/login/Login.jsx";
 import Register from "./Components/register/Register.jsx"
 import TechnicienProfile from "./Components/Technicien-profile/TechnicienProfile";
 import WorkDetails from "./Components/WorkDetails/WorkDetails";
-import AddCategory from "./Components/addCategory/addCategory";
-
+import { data } from './Components/Technicien-profile/data.jsx';
+import React , {useState} from "react";
+import Profile from './Components/Profileinformation/profileinformation.jsx';
 
 
 function App() {
-
+const [donnes,setDonnes]=useState();
   return (
     <div>
     <BrowserRouter>
       <Routes>
+      <Route path="/" element={<Register />} />
+
           <Route  path="/login" element={ <Login /> }/>  
           <Route  path="/register" element={ <Register /> }/> 
-          <Route  path="/profile" element={ <TechnicienProfile /> }/> 
-          <Route  path="/addwork" element={ <WorkDetails/> }/> 
-          <Route  path="/addcategory" element={ <AddCategory/> }/> 
+          <Route  path="/profile" element={ <Profile/> }/> 
+
+
+          <Route  path="/technicienrealisations"  element={ <TechnicienProfile donnes={donnes}  setDonnes={setDonnes}  /> }        /> 
+
+          <Route  path="/addwork" element={ <WorkDetails donnes={donnes}  setDonnes={setDonnes}/> }/> 
 
 
           

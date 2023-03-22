@@ -3,175 +3,123 @@ import "./WorkDetails.css";
 import Creatable from "react-select/creatable";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCamera } from "@fortawesome/free-solid-svg-icons";
+import  { useEffect ,useRef} from "react";
+import { useNavigate } from "react-router-dom";
+import AuthService from "../../services/auth.service";
+import RealisationService from "../../services/RealisationService";
 
-const roles = [
-  { label: "gardening", value: 1 },
-  { label: "Carpentry", value: 2 },
-  { label: "electricity", value: 3 },
-  { label: "plumbing", value: 4 },
-  { label: "tapestry", value: 5 },
-  { label: "plastering", value: 6 },
-];
-
-const customStyles = {
-  option: (provided, state) => ({
-    ...provided,
-    borderBottom: "1px dotted pink",
-    color: state.isSelected ? "red" : "blue",
-    padding: 20,
-  }),
-};
 
 const WorkDetails = (props) => {
-  const [name, setName] = useState("");
-  const [roleValue, setRoleValue] = useState([]);
-  const [tagInputValue, setTagInputValue] = useState("");
-  const [tagValue, setTagValue] = useState([]);
-  const [selectedFile, setSelectedFile] = useState(null);
-  const [imageUrl, setImageUrl] = useState("");
+ const {donnes,setDonnes}=props;
+  const [CurrentUser, setCurrentUser] = useState(undefined);
+  const [titre, setTitre] = useState();
+  const [category, setCategory] = useState();
+  const [image, setImage] = useState();
 
-  const handleChange = (field, value) => {
-    switch (field) {
-      case "roles":
-        setRoleValue(value);
-        break;
+  const [description, setDescription] = useState();
+ 
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+  const navigate = useNavigate();
+  const ref=useRef(null);
+  useEffect(() => {
+    const user1 = AuthService.getCurrentUser();
 
-      case "tags":
-        setTagValue(value);
-        break;
-
-      default:
-        break;
+    if (user1) {
+      setCurrentUser(user1);
     }
+  }, []);
+  const handleAddRealisation = (e) => {
+    e.preventDefault();
+    const userId = CurrentUser.id;
+    console.log(userId);
+    RealisationService.addRealisation(titre, description, category,image,CurrentUser).then(
+      (response) => {
+        
+        console.log(response);
+        navigate("/technicienrealisations");
+        setDonnes({image,titre})
+      },
+      (error) => {
+        console.log(error);
+        setError(error.message);
+      }
+    );
+    console.log("addRealisation");
   };
 
-  const handleKeyDown = (event) => {
-    if (!tagInputValue) return;
-    switch (event.key) {
-      case "Enter":
-      case "Tab":
-        setTagValue([...tagValue, createOption(tagInputValue)]);
-        setTagInputValue("");
-        event.preventDefault();
-        break;
-
-      default:
-        break;
-    }
-  };
-
-  const createOption = (label) => ({
-    label,
-    value: label,
-  });
-
-  const handleInputChange = (value) => {
-    setTagInputValue(value);
-  };
-
-  const handleFileSelect = (event) => {
-    setSelectedFile(event.target.files[0]);
-  };
-
-  const handleFileUpload = async () => {
-    const formData = new FormData();
-    formData.append("image", selectedFile);
-
-    const response = await fetch("/api/v1/upload", {
-      method: "POST",
-      body: formData,
-    });
-
-    const data = await response.json();
-    setImageUrl(data.imageUrl);
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    fetch('/api/v1/addWork', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ title, category })
-    })
-      .then(response => response.json())
-      .then(data => {
-        // Show the success message to the user
-        alert('Work added successfully!');
-        // Navigate back to the profile page
-        props.history.push('/profile');
-      })
-      .catch(error => console.error(error));
-  };
+ 
   return (
     <div className="workpage-container">
+       {error && (
+        <div className="alert alert-danger">
+          <strong>{error}</strong>
+        </div>
+      )}
       <h1 className="worktitle">Add Work</h1>
       <h2 className="worksubtitle">Submit your work here</h2>
       <div className="workform-container">
         <div>
-          <label className="worklabel">Name</label>
+          <label className="worklabel">Titre</label>
           <input
+          id="titre"
             type="text"
             className="workinput"
-            value={name}
-            onChange={(event) => setName(event.target.value)}
+            value={titre}
+            onChange={(e) => setTitre(e.target.value)}
+            required
           />
         </div>
 
         <div>
-          <label className="worklabel">Category</label>
-          <Creatable
-            isClearable
-            isMulti
-            onChange={(value) => handleChange("roles", value)}
-            options={roles}
-            value={roleValue}
-            styles={customStyles}
+        <label className="worklabel">Category</label>
+          <input
+          id="category"
+            type="text"
+            className="workinput"
+            value={category}
+            onChange={(e) => setCategory(e.target.value)}
+            required
           />
+         
         </div>
       <div className="exception" >
-      <label htmlFor="image-upload" className="worklabel">
-        <i className="fas fa-upload"   >
-        <FontAwesomeIcon icon={faCamera} className='camera-icon'/>
-        </i>
+      <label  className="worklabel">
+    
           Upload image    
  </label>
           <input
-        type="file"
-        id="image-upload"
+        type="text"
+        id="image"
         accept="image/*"
         className="workinput" 
 
-        onChange={handleFileSelect}
-
+        required
+        onChange={(e) => setImage(e.target.value)}
+       
       />
-       {imageUrl && (
-    <img src={imageUrl} alt="Preview" className="image-preview" onChange={handleFileUpload} />
-  )}
+       
         
       </div>
 
       <div >
-        <label className="worklabel">Tag(s)</label>
-        <Creatable
-          isClearable
-          isMulti
-          components={
-            { DropdownIndicator: null }
-          }
-          inputValue={tagInputValue}
-          menuIsOpen={false}
-          onChange={(value) => handleChange('tags', value)}
-          placeholder='Type something and press enter...'
-          onKeyDown={handleKeyDown}
-          onInputChange={handleInputChange}
-          value={tagValue}
-        />
+        <label className="worklabel">description</label>
+        <input
+          id="description"
+            type="text"
+            className="workinput"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+            
+          />
+        
+        
       </div>
 
       
 
       <div >
-        <button className="worksubmitbutton" onChange={handleSubmit}>Submit</button>
+        <button className="worksubmitbutton" onClick={handleAddRealisation}>Submit</button>
       </div>
     </div>
   </div>

@@ -1,35 +1,71 @@
-import React from "react";
+import React  , { useState,useEffect}  from "react";
+import { data } from "./data";
 import "./TechnicienProfile.css";
 import technicienprofile from "../../assets/technicienprofile.png";
-import category1 from "../../assets/category1.png";
-import category2 from "../../assets/category2.png";
-import category3 from "../../assets/category3.png";
-import category4 from "../../assets/category4.png";
-import category5 from "../../assets/category5.png";
 import category6 from "../../assets/category6.png";
+import { useNavigate } from "react-router-dom"
+import AuthService from "../../services/auth.service";
 
 
 
+const  TechnicienProfile= ({donnes,setDonnes})=>{
+ const  [daata,setData] = useState(data);
+ useEffect(()=>{
+  console.log(donnes);
+  console.log(daata);
+  console.log({...daata,donnes})
+  {donnes &&   setData([...daata,donnes])}
+  console.log([...daata,donnes]);
 
+  //const achraf={ "image" :donnes.image ,"titre" : donnes.titre}
+  //console.log(achraf);
+  //setData({...daata,achraf})
+ // console.log({...daata,achraf});
 
-export default function TechnicienProfile(){
+ },[donnes])
+ 
+
     return (
-        <div className="profile-container">
-          <div className="profile-header">
-            <img className="profile-photo" src={technicienprofile} alt="Profile" />
-            <h1 className="profile-name">ALAOUI ANASS</h1>
-            <button className="profile-button">
+        <div className="profile1-container">
+          <div className="firstrow">
+            <h1 className="profile-name" 
+ >My Achievements</h1>
+            <button className="profile-button" >
             <a href="/addwork
-            " > Add Work</a>
+            " >  <p className="addworktext"> Add Work</p></a>
 
               
              </button>
           </div>
           <div className="profile-grid">
-            <div className="profile-grid-category">Electricité</div>
-            <div className="profile-grid-category"></div>
-            <div className="profile-grid-category"></div>
-            <div className="profile-grid-item">
+           <div className="map0">
+           <div className="map">
+              {
+                
+                daata?.map((item,i)=>{
+                const {image,titre}=item;
+                return (
+                  <div key={i} className="cle">
+                    
+                      <img  className ="picture" src={image} alt="Image 2"  />
+                    
+                  <p className="legend">{titre}</p>
+
+                    </div>
+                )
+                })
+              }
+</div>
+
+           </div>
+           
+          </div>
+        </div>
+      );
+
+}
+/*
+ <div className="profile-grid-item">
               <img src={category1} alt="Image 1" />
               <p>Legend 1</p>
             </div>
@@ -54,15 +90,5 @@ export default function TechnicienProfile(){
               <p>Legend 6</p>
             </div>
            
-            <button className="profile-button" >
-            <a href="/addcategory
-            " > Add Category</a>
-
-              
-             </button>
-          
-          </div>
-        </div>
-      );
-
-}
+*/
+export default  TechnicienProfile;
