@@ -85,21 +85,54 @@ color: #A1A1AA;
   grid-template-columns: auto auto auto auto;
   gap: 1rem;
   row-gap: 0.2rem;
+  justify-content: center;
 }
 .type{
     
 font-family: 'Poppins';
 font-style: normal;
 font-weight: 600;
-font-size: 25px;
+font-size: 23px;
 line-height: 30px;
+text-align: center;
 color: #fff;
 position: relative;
 top: -6.5rem;
-left: 5rem;
+display: flex;
+justify-content: center;
+-webkit-transform: scale(1);
+transform: scale(1);
+-webkit-transition: .3s ease-in-out;
+transition: .3s ease-in-out;
+overflow-y: hidden;
+cursor: pointer;
+text-decoration: none;
+outline: none;
 }
+.type:hover{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 90%;
+    -webkit-transform: scale(1.5);
+	transform: scale(1.5);
+    overflow-y: hidden;
+}
+
 .Join{
     margin-top: 10rem;
     background: linear-gradient(270deg, rgba(44, 2, 70, 0.58) 0%, rgba(0, 0, 0, 0.58) 100%);
     height: 640px;
+}
+
+.card{
+    cursor: pointer;
+    -webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.card:hover{
+    -webkit-transform: scale(1.09);
+	transform: scale(1.09);
 }

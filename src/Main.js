@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Navbar from "./Navbar/Navbar";
 import Footer from "./Footer/Footer";
@@ -15,14 +15,18 @@ const Main = () => {
       Time: new Date(),
   }
 
+  const [Cat , setCat]=useState("Categories");
+  const [Index,setIndex]=useState(0);
+  const [Realisation, setRealisation]=useState({})
+
   return (
     <BrowserRouter>
       <Navbar />
       <Routes>
-      <Route exact path="/Livingroom/1" element={<Salon user={user}/>}></Route>
-      <Route exact path="/" element={<Home />}></Route>
+      <Route exact path="/Categories/*" element={<Lr Cat={Cat} setCat={setCat} Index={Index} setIndex={setIndex} setRealisation={setRealisation}/>}></Route>
+      <Route exact path="/Categories" element={<Home Cat={Cat} setCat={setCat}/>}></Route>
       <Route exact path="/test" element={<Test user={user}/>}></Route>
-      <Route exact path="/Livingroom" element={<Lr />}></Route>
+      <Route exact path="/Categories/:Cat/:Index" element={<Salon user={user} Cat={Cat} Index={Index} Realisation={Realisation}/>}></Route>
     </Routes>
       <Footer />
     </BrowserRouter>

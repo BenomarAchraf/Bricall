@@ -1,16 +1,21 @@
-import React ,{useState} from 'react'
+import React ,{useEffect, useState} from 'react'
 import "./Salon.css"
 import Selected from "../Assets/Images/lr.webp"
 import { ImDownload3 as Download , ImShare2 as Share , ImLink as CopyLink} from "react-icons/im";
 import {BsFillCaretDownFill as DownF} from "react-icons/bs"
 import CommentBox from './CommentBox';
 import SSug from './SliderSug/SSug';
-const Salon = ({user}) => {
+import { Data } from '../Livingroom/Slider/Data';
+const Salon = ({user,Index, Realisation}) => {
     const [ShowComments,setShowComments]=useState(true)
+    useEffect(()=>{
+        console.log(Index);
+        console.log(Realisation);
+    },[])
   return (
     <div className='salon'>
         <div className='Card'>
-            <img src={Selected} className='Selected' alt="" />
+            <img src={Data[Index]} className='Selected' alt="" />
             <div className='SelectedInfo'>
                 <div className='icons12'>
                    
@@ -23,10 +28,10 @@ const Salon = ({user}) => {
                     <div className='icall'></div>
                  </div>
                 <div  className='TitleLr'>
-                    "Minimalist Elegance: The Modern Living Room Design" By  <a href='' className='Namep'>Roban Marox</a>  
+                    "{Realisation.titre}" By  <a href='' className='Namep'>{Realisation.user.username}</a>  
                 </div>
                 <div className='Descriptionlr Amin'>
-                A modern living room is characterized by a minimalist design featuring clean lines and neutral colors. Furniture is typically low to the ground, made of sleek materials such as leather, metal, or high-gloss wood. 
+                {Realisation.description}
                 </div>
                 <div className='Commentaires'>
                             Comments <DownF className={ShowComments?"DownF":"DownF1"} onClick={()=>setShowComments(!ShowComments)}/>

@@ -60,12 +60,13 @@ color: #FFFFFF;
 }
 
 .Research > :nth-child(2){
+    display: none;
     cursor: pointer;
     width: 100px;
     height: 38px;
     border-radius: 8px;
     background: #7F56D9;
     /* Primary/600 */
-    
+    cursor: pointer;
     border: 1px solid #7F56D9;
 }

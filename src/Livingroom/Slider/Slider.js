@@ -1,8 +1,8 @@
 import React , {useEffect , useState} from 'react'
-import { Data } from './Data'
+import { DataSlider } from './DataSlider'
 import "./slider.css"
 const Slider = () => {
-    const [data , setdata]=useState(Data);
+    const [data , setdata]=useState(DataSlider);
     const [index, setIndex]=useState(0);
     const [tab , setTab]=useState([index , (index+1)%6 , (index+2)%6]);
 

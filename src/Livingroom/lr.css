@@ -9,6 +9,21 @@
 
     
 }
+
+.NoMore{
+    
+    font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 40px;
+line-height: 60px;
+width: 100%;
+/* identical to box height, or 125% */
+
+margin: auto;
+margin-left: 22%;
+    color: #000000;
+}
 .Introlr > :nth-child(2){
     z-index: 2;
     font-family: 'Inter';
