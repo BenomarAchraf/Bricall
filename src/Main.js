@@ -1,7 +1,9 @@
-import React, { Fragment } from "react";
+import React, { useState } from 'react';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Navbar from "./Navbar/Navbar";
 import NavbarComponents from "./Navbar/NavbarComponents";
+import Chat from "./Chat/Chat";
+import Conversation from "./Components/Conversations/Conversation";
 
 import Footer from "./Footer/Footer";
 import Home from "./Homepage/Home";
@@ -23,6 +25,7 @@ const Main = () => {
       Comment: "It's so good, great job !",
       Time: new Date(),
   }
+  const [donnes,setDonnes]=useState();
 
   return (
     <BrowserRouter>
@@ -40,8 +43,12 @@ const Main = () => {
           <Route  path="/register" element={ <Register /> }/> 
           <Route  path="/profile" element={ <TechnicienProfile /> }/> 
           <Route  path="/addwork" element={ <WorkDetails/> }/> 
-          <Route  path="/addcategory" element={ <AddCategory/> }/> 
+        <Route path="/addcategory" element={<AddCategory />} />
+        <Route path="/Chat" element={<Chat />} />
+        <Route path="/conversation" element={<Conversation />} />
+        <Route  path="/technicienrealisations"  element={ <TechnicienProfile donnes={donnes}  setDonnes={setDonnes}  /> }        /> 
 
+          <Route  path="/addwork" element={ <WorkDetails donnes={donnes}  setDonnes={setDonnes}/> }/> 
     </Routes>
       <Footer />
     </BrowserRouter>

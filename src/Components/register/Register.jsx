@@ -5,6 +5,8 @@ import { isEmail } from "validator";
 import CheckButton from "react-validation/build/button";
 import Form from "react-validation/build/form";
 import AuthService from "../../services/auth.service";
+import { Link } from "react-router-dom";
+
 
 
 
@@ -111,8 +113,13 @@ export default function Register(){
     if (checkBtn.current.context._errors.length === 0) {
       AuthService.register(fullname,email,username, phonenumber, password).then(
         (response) => {
+        
           setMessage(response.data.message);
           setSuccessful(true);
+          navigate("/login");
+          window.location.reload();
+
+        
         },
         (error) => {
           const resMessage =
@@ -131,16 +138,16 @@ export default function Register(){
  return (
   
 
-<div className='register-page'>
+<div className=''>
 
 <h2 className='create-account-title'> Register Now</h2>
-<div className='container'>
+<div className='container123'>
 <div className='register-image'>
 <img src={registerImage} alt="avatar"/>
 </div>
       
       
-        <div className="form-container">
+        <div className="form123-container">
     
       <Form onSubmit={handleRegister} ref={form}>
           {!successful && (
@@ -188,16 +195,29 @@ export default function Register(){
             onChange={onChangePassword}
             validations={[required, vpassword]}
             
+
             />
+                      
+
           </div>
+          <div className="form-column">
+          <label className="label-style" htmlFor="password">Confirm Password</label>
+                        <input className="rectangle-style" type="password" id="confirm-password" 
+            name="confirm-password"
+           
+            
+
+            />
+            </div>
         </div>
      
         <div >
-          <button type="submit" className="submit-button">Register</button>
+          <button type="submit" className="submit-button " >Register</button>
         </div>
         <div className="already-have-account">
-        <p className="have-account-text">Already have an account?</p>
-        <a href="/login" className="register-link">Log In</a>
+        <p className="have-account-text">Already have an account?
+        <a href="/login" className="register-link">Log In</a></p>
+        
       </div>
       </div>
        )}
@@ -231,7 +251,6 @@ export default function Register(){
  
 
  
-
 
 
 

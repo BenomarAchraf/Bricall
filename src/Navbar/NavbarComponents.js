@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import AuthService from "../services/auth.service";
 
 import "./Navbar.css";
@@ -7,6 +7,7 @@ import logo from "../Assets/Images/Logo3.svg"
 import "@fontsource/poppins";
 const NavbarComponents = () => {
     const user = AuthService.getCurrentUser();
+    const nav=useNavigate();
     const logout = () => {
   return new Promise((resolve, reject) => {
     AuthService.logout();

@@ -14,7 +14,6 @@ function TechnicianProfile() {
       .catch(error => console.error(error));
   }, []);
 
-
   if (!technicianData) {
     return <div>Loading technician data...</div>;
   }

@@ -24,6 +24,12 @@ import { useNavigate } from 'react-router-dom';
 
   const handleLogin = (e) => {
     e.preventDefault();
+
+
+
+
+
+ 
       AuthService.login(username, password).then(
         () => {
           navigate("/profile");
@@ -43,14 +49,15 @@ import { useNavigate } from 'react-router-dom';
  <div >
 
 <h2 className='login-title'> Welcome to our community</h2>
-<div className='container'>
+<div className='container1'>
 <div className='login-image'>
 <img src={loginImage} alt="avatar"/>
 </div>
 <div className='rectangle-style-login'>
-<form className='form-style'>
+  <div className='taille'>
+<form className=''>
     <div className='container-input'>
-<p>
+<p className='onerow'>
                     <label className='username-label'>Username</label><br/>
                     <input className='username-input' type="text" name="first_name" 
   value={username}
@@ -58,7 +65,7 @@ import { useNavigate } from 'react-router-dom';
                     required />
                 </p>
               
-                <p>
+                <p className='onerow'>
                     <label className='password-label'>Password</label><br/>
                     <input className='password-input' type="password" name="password" 
                     
@@ -77,11 +84,11 @@ import { useNavigate } from 'react-router-dom';
                 <p className='forget-password'>
                     Forget Password ?
                 </p>
-                <p className='forget-password'>Don't have account?   </p>
-                <a href="/register" className="register-text">Register</a>       
+                <p className='forget-password'>Don't have account? <a href="/register" >Register</a>    </p>
+                     
                 </div>
             </form>
-            
+            </div>
             </div>
 
 </div>
@@ -94,6 +101,5 @@ import { useNavigate } from 'react-router-dom';
 
 }
 export default Login;
-
 
 

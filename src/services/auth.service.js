@@ -1,6 +1,8 @@
 import axios from "axios";
 
 const API_URL = "http://localhost:8081/api/auth/";
+const API="http://localhost:8081/api/v1/addrealisation"
+
 
 const register = (fullname,email,username, phonenumber, password) => {
   return axios.post(API_URL + "signup", {
@@ -24,6 +26,21 @@ const login = (username, password) => {
       return response.data;
     });
 };
+const addwork = (name, imageUrl,tagValue) => {
+  return axios
+    .post(API+ "workadded", {
+      name,
+      imageUrl,
+      tagValue
+    })
+    .then((response) => {
+      if (response.data.accessToken) {
+        localStorage.setItem("work", JSON.stringify(response.data));
+      }
+
+      return response.data;
+    });
+};
 
 const logout = () => {
   localStorage.removeItem("user");
@@ -38,6 +55,7 @@ const AuthService = {
   login,
   logout,
   getCurrentUser,
+  addwork
 };
 
 export default AuthService;
