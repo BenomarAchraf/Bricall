@@ -135,7 +135,14 @@
     position: relative;
     top: -15rem;
 }
+.SuggEl2{
+    height: 22rem;
+    background-color: blue;
+    margin: auto;
+    position: relative;
+    top:2rem;
 
+}
 .MSFL{
     font-family: 'IBM Plex Sans';
     font-style: normal;

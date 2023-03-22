@@ -3,7 +3,7 @@ export const dataa = [
     {
         Name: "Hamid Marco" ,
         Comment: "It's so good, great job !",
-        Time: new Date(),
+        time: new Date(),
     },
     {
         Name: "Hamid Marco" ,

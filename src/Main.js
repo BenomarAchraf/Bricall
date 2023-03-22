@@ -21,12 +21,12 @@ const Main = () => {
 
   return (
     <BrowserRouter>
-      <Navbar />
+      <Navbar setCat={setCat}/>
       <Routes>
       <Route exact path="/Categories/*" element={<Lr Cat={Cat} setCat={setCat} Index={Index} setIndex={setIndex} setRealisation={setRealisation}/>}></Route>
       <Route exact path="/Categories" element={<Home Cat={Cat} setCat={setCat}/>}></Route>
       <Route exact path="/test" element={<Test user={user}/>}></Route>
-      <Route exact path="/Categories/:Cat/:Index" element={<Salon user={user} Cat={Cat} Index={Index} Realisation={Realisation}/>}></Route>
+      <Route exact path="/Categories/:Cat/:Index" element={<Salon Cat={Cat} Index={Index} Realisation={Realisation}/>}></Route>
     </Routes>
       <Footer />
     </BrowserRouter>

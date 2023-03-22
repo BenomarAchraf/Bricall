@@ -6,8 +6,9 @@ import {BsFillCaretDownFill as DownF} from "react-icons/bs"
 import CommentBox from './CommentBox';
 import SSug from './SliderSug/SSug';
 import { Data } from '../Livingroom/Slider/Data';
-const Salon = ({user,Index, Realisation}) => {
+const Salon = ({Index, Realisation}) => {
     const [ShowComments,setShowComments]=useState(true)
+    const [user , setUser]=useState(Realisation.user);
     useEffect(()=>{
         console.log(Index);
         console.log(Realisation);
@@ -43,12 +44,12 @@ const Salon = ({user,Index, Realisation}) => {
         <div className='CommentChat'>
         {
                     ShowComments&& <div className='chatbox'> 
-                        < CommentBox  user={user}   />
+                        < CommentBox  user={user} Realisation={Realisation}  />
                     </div>
                 }
         </div>    
 
-        <div className='SuggEl'>
+        <div className={ShowComments?'SuggEl':'SuggEl2'}>
             <p className='MSFL'> More Suggestion For You </p>
             <SSug className="positionSS" />
          </div>

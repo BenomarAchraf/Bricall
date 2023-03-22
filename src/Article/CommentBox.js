@@ -1,14 +1,16 @@
 
-import React , {useState} from 'react'
+import React , {useEffect, useState} from 'react'
 import { CommentSection } from 'react-comments-section'
 import 'react-comments-section/dist/index.css'
 import { dataa } from '../dataa'
 import data  from '@emoji-mart/data'
 import Picker from '@emoji-mart/react'
+import { SaveComment } from '../Services/commentaire'
+import { GetRealisationCommments } from '../Services/commentaire'
 import "./Coments.css"
-const CommentBox = ({user}) => {
+const CommentBox = ({user,Realisation}) => {
 
-    const [donnée , setD]=useState(dataa)
+    const [donnée , setD]=useState([])
     const [val, setVal] = useState('');
     const [showEmojis, setShowEmojis] = useState(false);
     const addEmoji = (e) => {
@@ -21,7 +23,7 @@ const CommentBox = ({user}) => {
   
     const LgDeal=(Name)=>{
       const log=Name.split(" ");
-      const logoo=log[0].charAt(0)+log[1].charAt(0);
+      const logoo=(log.length>=2)?log[0].charAt(0)+log[1].charAt(0):log[0].charAt(0)+log[0].charAt(0);
       return logoo;
     }
     
@@ -32,17 +34,34 @@ const CommentBox = ({user}) => {
       return Time.toString()+" ";
   }
   
-    const Sub=(val)=>{
-        const nev={
-          Name: user.Name ,
-          Comment: val ,
-          Time: new Date(),
-        }
-        setD([...donnée , nev])
+    const Sub=async(val)=>{
+       
+      const commentaire=val;
+      const realisation={...Realisation};
+      const Dd=new Date().toString().split(" ");
+      const time=Dd[2]+" "+Dd[1]+" "+Verifay(Dd[3])+"at "+Dd[4];
+      const nev={
+        time,commentaire,realisation, user
+      }
+      console.log(Realisation);
+      setD([...donnée , nev])
+      SaveComment(nev)
+      //{Realisation&&&&setD([...donnée , nev])}
+        
+        console.log(nev)
         setVal("")
   
     }
+    const Fetch=async()=>{
+      const don=await GetRealisationCommments(Realisation.id);
+      console.log(don);
+      {don&&setD(don)};
+
+    }
   
+    useEffect(()=>{
+       Fetch();
+    },[])
 
     return (
       <div className='boxx'>
@@ -50,24 +69,24 @@ const CommentBox = ({user}) => {
       <div className='bc' >
         
           {donnée.map((item, i)=>{
-              const {Name ,Comment, Time}=item;
-              const Dd=Time.toString().split(" ");
-              const time=Dd[2]+" "+Dd[1]+" "+Verifay(Dd[3])+"at "+Dd[4];
+              const {time,commentaire, user}=item;
+              const Dd=time.split(" ");
+              const Time=Dd[0]+" "+Dd[1]+" "+Verifay(Dd[2])+"at "+Dd[3];
               console.log(time)
               return (
                 <div key = { i } className="Comment" >
                   <div className='Logoo'> 
-                    <p className='lgo'>{LgDeal(Name)}</p>
+                    <p className='lgo'>{LgDeal(user.username)}</p>
                   </div>
                   <div className='Cm'>
                     <div className='Name'>
-                        {Name}
+                        {user.username}
                     </div>
                     <div className='Dd'>
-                        {time}
+                        {Time}
                     </div>
                     <div className='cc'>
-                        {Comment}
+                        {commentaire}
                     </div>
                   </div>
                 </div>
@@ -101,7 +120,7 @@ const CommentBox = ({user}) => {
           
         )}
         <div className={showEmojis ? 'Logoo2' : 'Logoo1'}> 
-          <p className='lgo1'>{LgDeal(user.Name)}</p>
+          <p className='lgo1'>{LgDeal(user.username)}</p>
         </div>
         </button>
       </div>

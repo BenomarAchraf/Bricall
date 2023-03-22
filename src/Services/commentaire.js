@@ -3,12 +3,16 @@ import App from "../App";
 
 const API_URL = "http://localhost:8081/api/";
 
-const SaveComment=(commentaire)=>{
+export const SaveComment=(commentaire)=>{
     axios.post(API_URL+"comments",commentaire)
 }
 
-const GetRealisationCommments=(realisation_id)=>{
-    axios.get(API_URL+"comments/"+realisation_id)
+export const GetRealisationCommments=async(realisation_id)=>{
+    const resultats=await fetch(API_URL+"comments/"+realisation_id);
+		const données=await resultats.json();
+        console.log(données);
+ 
+    return données;
 }
 
 const CommentsMethods={

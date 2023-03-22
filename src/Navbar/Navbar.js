@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 import "./Navbar.css";
 import logo from "../Assets/Images/Logo3.svg"
 import "@fontsource/poppins";
-const Navbar = () => {
+const Navbar = ({setCat}) => {
   return (
     <div className='nav'>
-        <Link className='pp' to="/">
+        <Link className='pp' to="/Categories" onClick={()=>setCat("Categories")}>
             <img className='logo' src={logo}/>
         </Link>
         <div className='pages'>
