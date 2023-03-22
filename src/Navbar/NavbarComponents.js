@@ -13,7 +13,7 @@ const NavbarComponents = () => {
     AuthService.logout();
     resolve();
   }).then(() => {
-    nav("/login", { replace: true });
+    nav("/", { replace: true });
   });
 }
 
@@ -39,7 +39,7 @@ const NavbarComponents = () => {
               </Link>
             {user==null&& <>
             <div className='sign'>
-                <Link className='SignUp'to="/register">
+                <Link className='Sign'to="/register">
                     Sign Up
                 </Link>
                 <Link className='SignIn' to="/login">

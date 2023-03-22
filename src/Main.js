@@ -29,7 +29,7 @@ const Main = () => {
 
   return (
     <BrowserRouter>
-      <NavbarComponents />
+    <NavbarComponents />
       <Routes>
       <Route exact path="/Livingroom/1" element={<Salon user={user}/>}></Route>
       <Route exact path="/" element={<Home />}></Route>
@@ -48,8 +48,9 @@ const Main = () => {
         <Route path="/conversation" element={<Conversation />} />
         <Route  path="/technicienrealisations"  element={ <TechnicienProfile donnes={donnes}  setDonnes={setDonnes}  /> }        /> 
 
-          <Route  path="/addwork" element={ <WorkDetails donnes={donnes}  setDonnes={setDonnes}/> }/> 
-    </Routes>
+        <Route path="/addwork" element={<WorkDetails donnes={donnes} setDonnes={setDonnes} />} />
+        
+      </Routes>
       <Footer />
     </BrowserRouter>
   );
