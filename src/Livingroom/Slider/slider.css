@@ -3,7 +3,11 @@
     border: 4px solid rgb(0, 0, 0);
     width: 306.65px;
     height: 409px;
+    cursor: pointer;
 }
+
+
+
 .Slider{
     width: 90%;
     display: flex;
@@ -15,6 +19,14 @@
 .Element{
     display: flex;
     flex-direction: column;
+    -webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.Element:hover{
+    -webkit-transform: scale(1.19);
+	transform: scale(1.19);
 }
 .infos{
     font-family: 'Poppins';
@@ -65,3 +77,14 @@
     border-radius: 19px;
     width: 56.28px;
     height: 54.72px;*/
+
+.items{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    width: 90%;
+    justify-content: center;
+    margin: auto;
+    gap: 5rem;
+    row-gap: 2.5rem;
+    margin-top: 7rem;
+    }

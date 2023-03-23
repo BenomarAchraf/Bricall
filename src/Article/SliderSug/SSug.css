@@ -1,0 +1,28 @@
+.SugSlider{
+    height: 50%;
+    width: 90%;
+  
+    margin: auto;
+    box-shadow: -5px 5px 20px 5px rgb(82, 82, 82);
+}
+.tailleSlider{
+    height: 60%;
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+.azin{
+    width: 100%;
+    margin: auto;
+}
+.aze{
+    position: relative;
+    top: 0rem;
+    height: 40rem;
+    width: 95%;
+    left: 2rem;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}

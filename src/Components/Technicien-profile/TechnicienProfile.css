@@ -1,0 +1,123 @@
+.profile1-container {
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  .profile-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .profile-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+  
+  .profile-name {
+    font-size: 24px;
+    font-family: 'Roboto';
+font-style: normal;
+font-weight: 700;
+font-size: 26px;
+line-height: 30px;
+text-align: center;
+
+color: #385192;
+  
+cursor: pointer;
+
+
+}
+  
+  .profile-button {
+    background: #5E66DB;
+    width: 500px;
+    height: 46px;
+    background: #0E3FF2;
+    border-radius: 5px;  
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+   
+    
+  }
+  .firstrow{
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    margin-left:  600px;
+    gap: 250px;
+  }
+  .addworktext{
+    color: #FFFFFF;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    font-size: 16px;
+    margin: 0;
+
+
+
+  }
+  
+  .profile-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-left: 10%;
+  }
+  
+  .profile-grid-category {
+    grid-column: 1/4;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .profile-grid-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .profile-grid-item img {
+    width: 100%;
+    max-width: 200px;
+    margin-bottom: 10px;
+  }
+  
+  .profile-grid-item p {
+    margin: 0;
+    font-size: 16px;
+  }
+  .map{
+
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 20px;
+
+
+  }
+  .map0{
+    grid-column: 1/4;
+  }
+  .cle{
+    text-align: center;
+  }
+  .legend{
+    font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 20px;
+line-height: 20px;
+/* identical to box height, or 100% */
+
+
+color: #385192;
+  }
+  .picture{
+    width: 384px;
+    height: 240px;
+    }

@@ -1,6 +1,6 @@
 .LivingBG{
     z-index: 1;
-    height:150rem;
+    height:210rem;
     background: linear-gradient(0deg, rgba(15, 18, 51, 0.64), rgba(15, 18, 51, 0.64)), linear-gradient(89.99deg, rgba(184, 143, 209, 0.77) 0.01%, rgba(255, 255, 255, 0.77) 0.01%, rgba(15, 58, 169, 0.77) 99.99%);
 }
 .Introlr > :nth-child(1){
@@ -24,9 +24,11 @@
 .article{
     z-index: 5;
     background-color: #FFFFFF;
-    height: 60rem;
+    height: 180rem;
     width: auto;
     margin-top: 6rem;
+    margin-bottom: 0rem;
+    padding-bottom: 2rem;
 
 }
 
@@ -71,7 +73,7 @@ text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 .down{
     margin-left: 47%; 
     position: relative;
-    top: 8%;
+    top: 12%;
     fill: #20df19;
     width: 50.07px;
     height: 40.96px;
@@ -81,6 +83,14 @@ text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     animation-iteration-count: infinite;
     animation-direction: alternate; 
 }
+.Up1{
+    fill:  #8e97b4;
+    width: 50.07px;
+    height: 40.96px;
+    cursor: pointer;
+    
+    }
+
 
 @keyframes Down {
     0%   {left:0px; top:0rem;}
@@ -97,25 +107,27 @@ border-radius: 20px;
 */
 
 .Livingroom{
-
-
     display: grid;
     grid-template-columns: auto auto auto auto auto auto;
 }
 .livr{
-    z-index: 2;
-    margin-top: -11rem;
+    display: none;
+    position: relative;
+    left:40%;
+    
+    z-index: 1;
+    animation: achi 2s linear ;
+    animation-iteration-count: 1;
+    
     border-radius: 20px;
-    animation-name: chraf;
-    animation-duration: 3s;
-    animation-iteration-count: infinite;
-
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    opacity: 20px;
 }
+@keyframes achi {
+    to {
+        transform: translate(0,-2rem);
+      }}
 
-@keyframes chraf {
-    0%   {left:0px; top:0rem;}
-    100% {left:0px; top:5rem;}
-}
 .livr1{
     display: none;
 }
@@ -131,3 +143,170 @@ border-radius: 20px;
 .livr5{
     display: none;
 }
+
+.Amine{
+    height: 6px;
+    width: 60%;
+    background-color: black;
+    margin-top: 4rem;
+    margin-left: 20%;
+    border-radius: 10px;
+}
+
+.Logo221{
+    margin-left: 20% ;
+    margin-top: 4%;
+    width: 90px;
+    height: 81px;
+
+}
+
+.Rate{
+    display: grid;
+      width: 60%;
+    grid-template-columns: repeat(3,20%);
+    gap: 3rem;
+    margin-left:33%;
+    margin-top: -9.5%;
+}
+
+.grid-Rate{
+    text-align: center;
+    
+}
+
+.title1{
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 34px;
+    color: #191D23;
+}
+.Date{
+    width: 8rem;
+    font-size: larger;
+    text-align: center;
+    background-color: #6a5bcd;
+    color: #191D23;
+    margin-top: 12px;
+}
+
+.Chec{
+    display: flex; 
+    flex-direction: column;
+    gap: 1rem;
+
+}
+.checkbox{
+   display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 9px;
+    width: 400px;
+    height: 30px;
+    margin-left: 15px;
+}
+.lab{
+     width: 120px;
+    height: 22px;
+    text-align: center;
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 27px;
+    color: #191D23;
+    position: relative;
+    top: -8%;
+    
+    
+}
+
+.inChec{
+    width: 1.6em;
+    height: 1.6em;
+    border-radius: 0.15em;
+    margin-right: 0.5em;
+    border: 0.5em solid #007a7e;
+    outline: none;
+    cursor: pointer;
+}
+
+.Filtrer{
+    font-size: large;
+    text-align: center;
+    font-family: 'Poppins';  
+    height: 3.5rem;
+    width: 7rem;
+    border-style: solid;
+      background: linear-gradient(#fff, #fff) padding-box,
+      linear-gradient(45deg, #6a5bcd, #ff7f50) border-box;
+    border: 5px solid transparent;
+    border-radius: 50px;
+    text-decoration: none;
+    cursor: pointer;
+
+}
+
+.grid-Rate1{
+    margin-top:3rem ;
+    margin-left: 2.5rem;
+    
+}
+
+.Chercher{
+    margin-left: 2.5rem;
+}
+
+.articles1{
+    height: 70rem;
+    margin-bottom: 2rem;
+
+}
+.articles{
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+.pagination {
+    display: inline-block;
+    margin-top:100px ;
+    margin-left: 500px;
+  }
+  
+  .pagination a {
+    color: black;
+    float: left;
+    text-align: center;
+    line-height: 50px;
+    text-decoration: none;
+    width: 50px;
+    height: 50px;
+
+  }
+
+  .Up{
+    position: fixed;
+    top: 90%;
+    left: 95%;
+    animation-name: Up;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate; 
+
+  }
+
+  
+@keyframes Up {
+    0%   {left:95%; top:90%;}
+    50%  { left:95%; top:84%;}
+    100% {left:95%; top:90%;}
+  }
+  
+  .pagination a.active {
+    background-color: #4A60A1;;
+    color: white;
+  }
+  
+  .pagination a:hover:not(.active) {background-color: #ddd;}

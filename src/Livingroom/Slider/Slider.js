@@ -12,6 +12,7 @@ const Slider = () => {
             setTab([index , (index+1)%6 , (index+2)%6])
         },5000)
     })
+    
     const Contain=(i)=>{
         let j=0;
         for(j=0; j<3 ; j++ ){

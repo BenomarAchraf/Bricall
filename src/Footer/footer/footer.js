@@ -11,7 +11,9 @@ const footer = () => {
                     <img className='logo11' src={logo}/>
                 </Link>
                 <p className='description'>
-                The Social Affairs Club is a non-profit, charitable, humanitarian club initiative of a group of young volunteers, concerned about the difficulties encountered by the weakest of heart, concerned about the ones in need and concerned about our country’s prosperity.
+                      L'objectif de cette applicaation est de lier les clients avec un groupe de technicians compétants,
+                      fournissant des services divers: tapisserie, peinture,menuiserie...
+        
                 </p>
             </div>
             <div className='grid-footer-2'>

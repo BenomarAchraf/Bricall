@@ -3,18 +3,36 @@ import "./Contact.css"
 import emailjs from '@emailjs/browser';
 import Logo from "../Assets/Images/image.png"
 function Contact() {
-    const form = useRef();
+  const form = useRef();
+  const [notification, setNotification] = useState(null);
      const sendEmail = (e) => {
     e.preventDefault();
 
     emailjs.sendForm('service_hwfkj17', 'template_pzgoago', form.current, 'ideoCSUE6XG0jHeCJ')
       .then((result) => {
-          console.log(result.text);
-      }, (error) => {
-          console.log(error.text);
-      });
-     
-  };
+        console.log(result.text);
+        //send notification to technician
+        fetch('http://localhost:8081/api/push-notifications', {
+                    method: 'POST',
+                    body: JSON.stringify({
+                      content: 'New message received',
+                      receiver_id: '123', //get user id
+
+                    }),
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+        }).then((response) => {
+                    if (response.ok) {
+                        setNotification('Notification sent successfully!');
+                    } else {
+                        setNotification('Error sending notification');
+                    }
+                });
+            }, (error) => {
+                console.log(error.text);
+            });
+    };
     return (
         <div className="contact">
             <div className="intro"><h1>Contactez-moi</h1>
@@ -39,12 +57,12 @@ function Contact() {
             required
           ></textarea>
           <button type="submit" value="Send"> Send Message</button>
-        </form>
+          </form>
+          {notification && <div>{notification}</div>}
       </div>
             <div className="leftSide">
                 <img src={Logo}
                 />
-
       </div>
     </div>
   );
