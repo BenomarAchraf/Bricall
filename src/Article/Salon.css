@@ -38,7 +38,10 @@
     column-gap: -2rem;
 }
 
+.CopyDone{
+    /*position: absolute;*/
 
+}
 
 .ic{
     width: 25px;

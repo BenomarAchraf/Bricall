@@ -7,12 +7,17 @@ import CommentBox from './CommentBox';
 import SSug from './SliderSug/SSug';
 import { Data } from '../Livingroom/Slider/Data';
 const Salon = ({Index, Realisation}) => {
+
+    const [copySuccess, setCopySuccess] = useState('');
     const [ShowComments,setShowComments]=useState(true)
     const [user , setUser]=useState(Realisation.user);
-    useEffect(()=>{
-        console.log(Index);
-        console.log(Realisation);
-    },[])
+    const copyToClipboard=()=> {
+        const link = window.location.href;
+        navigator.clipboard.writeText(link);
+        setCopySuccess('Copié !');
+        
+  }
+    
   return (
     <div className='salon'>
         <div className='Card'>
@@ -20,9 +25,11 @@ const Salon = ({Index, Realisation}) => {
             <div className='SelectedInfo'>
                 <div className='icons12'>
                    
-                        <Download className='ic' />
+                        <Download className='ic'/>
+                        
                         <Share className='ic' />
-                        <CopyLink className='ic' />
+                        <CopyLink className='ic'  />
+                        {copySuccess&&<p className='CopyDone'>{copySuccess}</p>}
                         <button className='Save'>
                         Save 
                         </button>

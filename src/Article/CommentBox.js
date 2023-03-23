@@ -39,7 +39,7 @@ const CommentBox = ({user,Realisation}) => {
       const commentaire=val;
       const realisation={...Realisation};
       const Dd=new Date().toString().split(" ");
-      const time=Dd[2]+" "+Dd[1]+" "+Verifay(Dd[3])+"at "+Dd[4];
+      const time=Dd[2]+" "+Dd[1]+" "+Dd[3]+" "+Dd[4];
       const nev={
         time,commentaire,realisation, user
       }
